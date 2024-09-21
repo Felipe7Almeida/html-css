@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 90vh;
+            width: 100vw;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        fieldset {
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        .nome, .email, .senha {
+            padding: 10px;
+        }
+
+        input {
+            padding: 6px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.534);
+            outline: none;
+        }
+
+        button {
+            position: relative;
+            left: 8vw;
+            margin-top: 30px;
+            padding: 15px 40px;
+            border-radius: 10px;
+            border: 1px solid black;
+            outline: none;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+
+        button:hover {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            transition-duration: .5s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplo de Formulário</h1>
+    <fieldset>
+        <legend>Dados Pessoais</legend>
+
+        <form method="get">
+            <div class="nome">
+                <label for="name">Nome</label>
+                <input type="text" placeholder="Nome" id="name" required>
+            </div>
+            <div class="email">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="senha">
+                <label for="password">Senha</label>
+                <input type="password" name="i-password" id="password" placeholder="Senha" required>
+            </div>
+            <button type="submit">Entrar</button>
+        </form>
+    </fieldset>
+</body>
+</html>
