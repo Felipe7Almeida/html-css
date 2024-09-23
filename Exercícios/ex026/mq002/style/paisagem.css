@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+/* modo landscape */
+
+body {
+    background: url(../images/cev-landscape.jpg) left bottom no-repeat fixed;
+    background-size: contain;
+}
+
