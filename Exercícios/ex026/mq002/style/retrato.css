@@ -3,6 +3,6 @@
 /* modo portrait */
 
 body {
-    background: url(../images/cev-landscape.jpg) center bottom no-repeat fixed;
+    background: url(../images/cev-portrait.jpg) center bottom no-repeat fixed;
     background-size: contain;
 }
