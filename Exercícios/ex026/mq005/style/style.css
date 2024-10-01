@@ -10,11 +10,6 @@ body {
     background-color: rgb(197, 197, 197);
 }
 
-.bibi-list {
-    display: block;
-    margin: auto;
-}
-
 header {
     background-color: rgb(143, 143, 143);
 }
@@ -25,7 +20,22 @@ header h1 {
 }
 
 menu {
+    display: none;
+}
+
+i#burger {
     display: block;
+    color: white;
+    background-color: rgb(43, 43, 43);
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+i#burger:hover {
+    background-color: white;
+    color: black;
+    transition-duration: .5s;
 }
 
 menu > ul {
