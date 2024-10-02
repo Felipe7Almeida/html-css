@@ -1,39 +1,63 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste de Responsividade</title>
-    <style>
-        body {
-            background-color: gray;
-        }
+{% extends "base.html" %}
 
-        main {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
+{% block content %}
+  <style>
+    .buttons-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
 
-            max-width: 800px;
-            min-width: 280px;
-            margin: auto;
-        }
+    .btn {
+      display: inline-block;
+      background-color: #0096c7;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      margin: 0 10px;
+    }
 
-        img {
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-    <main>
-        <h1>Testando Responsividade</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque ratione quia error earum, a nobis vel iste, saepe quas impedit alias expedita ipsa nemo odio fuga quam quod distinctio praesentium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit at voluptatibus eaque consequuntur iste possimus facilis iure obcaecati. Consectetur, voluptates iure est natus repellat quibusdam sunt quis optio asperiores ipsa. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt dolorum nisi laudantium! Magnam animi fuga, nesciunt, sunt ex dolore officia, necessitatibus aut adipisci assumenda laborum deserunt quibusdam voluptatum! Ducimus, dignissimos.
-        </p>
-        <picture>
-            <source media="(max-width: 600px)" srcset="imagens/irina-blok-pq.jpg">
-            <img src="imagens/irina-blok.jpg" alt="Irina Blok"></picture>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque ratione quia error earum, a nobis vel iste, saepe quas impedit alias expedita ipsa nemo odio fuga quam quod distinctio praesentium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit at voluptatibus eaque consequuntur iste possimus facilis iure obcaecati. Consectetur, voluptates iure est natus repellat quibusdam sunt quis optio asperiores ipsa. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt dolorum nisi laudantium! Magnam animi fuga, nesciunt, sunt ex dolore officia, necessitatibus aut adipisci assumenda laborum deserunt quibusdam voluptatum! Ducimus, dignissimos.
-        </p>
-    </main>
-</body>
-</html>
+    .btn:hover {
+      background-color: #108eb8;
+    }
+
+    .btn-danger {
+      background-color: #d9534f;
+      text-decoration: none !important;
+    }
+
+    .btn-danger:hover {
+      background-color: #d2221c;
+    }
+
+    .error-message {
+      color: #d9534f;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    a {
+      text-decoration: none !important;
+    }
+  </style>
+  <div class="card">
+    <div class="card-header">
+      <h1 class="card-title">Deletar Carro</h1>
+    </div>
+    <div class="card-body">
+      <p>Tem certeza que deseja deletar o carro <strong>{{ object.brand }} {{ object.model }}</strong>?</p>
+      <form method="post">
+        {% csrf_token %}
+        <div class="buttons-container">
+          <button type="submit" class="btn btn-danger">Deletar Carro</button>
+          <a href="{% url 'car_update' pk=object.pk %}" class="btn btn-secondary">Cancelar</a>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

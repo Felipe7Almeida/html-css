@@ -17,7 +17,7 @@ TV: acima de 1300px
         display: block;
     }
 
-    menu ul li {
+    menu > ul > li {
         display: inline-block;
     }
 
